@@ -8,7 +8,7 @@ import debug from "debug";
 import http from "http";
 
 /* Create debug */
-const sdebug = debug("meetflix-server:server");
+const sdebug = debug("meetflix-api:server");
 
 /* Get port from environment and store in Express. */
 const port = normalizePort(process.env.PORT || "3000");
