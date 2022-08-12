@@ -1,13 +1,15 @@
+import { Router } from "express";
+import { Failure } from "@src/controller/auth/failure";
 import {
   GoogleAuth,
-  Failure,
   GoogleAuthenticate,
   GoogleHandleSuccess,
+} from "@src/controller/auth/google";
+import {
   FacebookAuth,
   FacebookAuthenticate,
   FacebookHandleSuccess,
-} from "../controller/auth";
-import { Router } from "express";
+} from "@src/controller/auth/facebook";
 
 const router = Router();
 

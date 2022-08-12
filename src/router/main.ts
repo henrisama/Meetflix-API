@@ -1,14 +1,12 @@
 import { Router } from "express";
 import auth from "../middleware/auth";
-import {
-  ConfirmAccount,
-  GetSearch,
-  GetTrending,
-  Logout,
-  SignIn,
-  SignUp,
-} from "../controller/main";
 import os from "os";
+import { SignIn } from "@src/controller/main/signin";
+import { SignUp } from "@src/controller/main/signup";
+import { Logout } from "@src/controller/main/logout";
+import { ConfirmAccount } from "@src/controller/main/confirm";
+import { GetTrending } from "@src/controller/main/trending";
+import { GetSearch } from "@src/controller/main/search";
 
 const router = Router();
 
