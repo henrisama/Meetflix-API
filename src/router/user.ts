@@ -14,8 +14,11 @@ import GetWatchedIds from "@src/controller/user/watched/getIds";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.status(200).json({ mess: "" });
+router.get("/auth", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "is logged in",
+  });
 });
 
 router.get("/profiles", GetProfiles);

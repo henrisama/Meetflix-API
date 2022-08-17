@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "scr/app.ts",
   "license": "MIT",
+  "proxy": "http://api.test.com/v1",
   "scripts": {
     "debug": "SET DEBUG=meetflix-api:*",
     "dev": "nodemon -r tsconfig-paths/register src/bin/www",

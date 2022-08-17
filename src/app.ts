@@ -6,7 +6,7 @@ import helmet from "./middleware/helmet";
 import limiter from "./middleware/limiter";
 import compression from "./middleware/compress";
 import auth from "./middleware/auth";
-import session from "express-session";
+import session from "./middleware/session";
 import passport from "passport";
 import "./config/mongo";
 import "./config/passport";
@@ -18,7 +18,7 @@ import authRoute from "./router/auth";
 
 const app = express();
 
-app.use(session({ resave: false, saveUninitialized: true, secret: "cats" }));
+app.use(session);
 app.use(passport.initialize());
 app.use(passport.session());
 

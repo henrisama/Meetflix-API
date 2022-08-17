@@ -20,7 +20,7 @@ export const SignIn = async (request: Request, response: Response) => {
       if (!user) {
         response.status(400).json({
           success: false,
-          message: "user does not exist",
+          message: "invalid email or password",
         });
         return;
       }
@@ -38,14 +38,14 @@ export const SignIn = async (request: Request, response: Response) => {
         response.setHeader("Set-Cookie", [
           cookie.serialize("jwt", token, {
             httpOnly: true,
-            /* secure: process.env.NODE_ENV !== "development", */
+            /* secure: true, */
             maxAge: 60 * 60 * 1000,
             sameSite: "strict",
             path: "/",
           }),
           cookie.serialize("idUser", user.id, {
             httpOnly: true,
-            /* secure: process.env.NODE_ENV !== "development", */
+            /* secure: true, */
             maxAge: 60 * 60 * 1000,
             sameSite: "strict",
             path: "/",
@@ -60,7 +60,7 @@ export const SignIn = async (request: Request, response: Response) => {
       } else {
         response.status(400).json({
           success: false,
-          message: "passwords do not match",
+          message: "invalid email or password",
         });
         return;
       }

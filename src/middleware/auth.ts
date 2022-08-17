@@ -27,9 +27,6 @@ const auth = async (
     const message = (error as JsonWebTokenError).message;
 
     if (message) {
-      /* message === "invalid signature" ||
-        message === "jwt expired" ||
-        message === "jwt malformed" */
       response.status(401).json({
         success: false,
         message: message,
