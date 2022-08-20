@@ -1,12 +1,7 @@
 # 1 - Specify the version for docker-compose.yml
 version: "3.8"
 
-# 2- set network
-#networks:
-#  proxy:
-#    driver: bridge
-
-# 3 - Generate the services
+# 2 - Generate the services
 services:
   redis:
     image: redis:alpine
@@ -45,3 +40,8 @@ services:
     #restart: always
     ports:
       - 3000:3000
+
+# 3 - set network
+#networks:
+#  proxy:
+#    driver: bridge
